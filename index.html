@@ -14,6 +14,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="hxnmi" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 </head>
 
@@ -36,9 +41,7 @@
                     <div class="toggle-thumb"></div>
                 </div>
                 <li class="text"><a href="#info" id="infoBtn">Info</a></li>
-                <li class="text"><a href="#badge" target="_blank" rel="noopener noreferrer"
-                        onclick="window.open('https://www.credly.com/badges/7c078f8a-e787-4597-b8bf-1fa6215b0cc5', '_blank', 'noopener,noreferrer')">Badge</a>
-                </li>
+                <li class="text"><a href="#badges" id="badgesBtn">Badges</a></li>
                 <li class="text"><a href="#resume" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
                 </li>
@@ -60,11 +63,9 @@
             <div class="menu-links">
                 <li class="text"><a href="#" onclick="toggleMenu()" data-section="work">Work</a></li>
                 <li class="text"><a href="#" onclick="toggleMenu()" data-section="learn">Learn</a></li>
-                <li class="text"><a href="#info" onclick="openInfoModal(); toggleMenu()">Info</a></li>
-                <li class="text"><a href="#badge"
-                        onclick="window.open('https://www.credly.com/badges/7c078f8a-e787-4597-b8bf-1fa6215b0cc5', '_blank', 'noopener,noreferrer')">Badge</a>
-                </li>
-                <li class="text"><a href="#resume"
+                <li class="text"><a href="#info" onclick="openModal('infoModal'); toggleMenu()">Info</a></li>
+                <li class="text"><a href="#badges" onclick="openModal('badgesModal'); toggleMenu()">Badges</a></li>
+                <li class=" text"><a href="#resume"
                         onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
                 </li>
             </div>
@@ -73,24 +74,37 @@
     <!-- Popup Modal -->
     <div id="infoModal" class="modal">
         <div class="modal-content">
-            <span class="closeBtn">&times;</span>
+            <span id="infoCloseBtn" class="closeBtn">&times;</span>
             <div class="modal-grid">
-                <h2 class="text text-color box">Game Developer</h2>
-                <h4 class="text text-color box" style="font-weight: 600;">Based in Semarang, Indonesia. Specializing in
+                <p class="text text-color box">Game Developer</p>
+                <p class="text text-color box">Based in Semarang, Indonesia. Specializing in
                     game development using
                     Unity.
-                </h4>
-                <h4 class="text text-color box" style="font-weight: 500;">
+                </p>
+                <p class="text text-color box">
                     24'<br>23-24'<br>23'<br>23'<br>22'<br>22'<br>20-24'
-                </h4>
-                <h4 class="text text-color box" style="font-weight: 500;">Pawukon
-                    ChatBot<br>Mech.AI<br>DentalEPopUpBook<br>Skilvul<br>GigiEdukasiIsyarat<br>Bisa.AI<br>Bachelor of
-                    Informatics Engineering
-                </h4>
-                <h4 class="text text-color box" style="font-weight: 500;">
+                </p>
+                <p class="text text-color box">Pawukon ChatBot<br>Mech.AI<br>Dental E-Pop Up Book<br>Skilvul<br>Gigi
+                    Edukasi Isyarat<br>Bisa.AI<br>Bachelor
+                    of Informatics Engineering
+                </p>
+                <p class="text text-color box">
                     Freelance<br>Udinus<br>Freelance<br>Independent
                     Study<br>Freelance<br>Independent Study<br>Dian Nuswantoro University
-                </h4>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="badgesModal" class="modal">
+        <div class="modal-content">
+            <span id="badgesCloseBtn" class="closeBtn">&times;</span>
+            <div class="modal-grid">
+                <a href="#unity"
+                    onclick="window.open('https://www.credly.com/badges/7c078f8a-e787-4597-b8bf-1fa6215b0cc5', '_blank', 'noopener,noreferrer')">Unity
+                    Certified Associate: Game Developer</a>
+                <a href="#nvidia"
+                    onclick="window.open('https://learn.nvidia.com/certificates?id=1efa6c4ded0f429bbcd8bce75d94f9a0', '_blank', 'noopener,noreferrer')">NVIDIA
+                    Getting Started with Deep Learning</a>
             </div>
         </div>
     </div>
@@ -110,11 +124,11 @@
             </div>
             <div class="video-item zoom-hover">
                 <video src="./assets/video0.mp4" autoplay muted loop playsinline id="bg-video"></video>
-                <div class="overlay">GigiEdukasiIsyarat, Freelance<br>Unity</div>
+                <div class="overlay">Gigi Edukasi Isyarat, Freelance<br>Unity</div>
             </div>
             <div class="video-item zoom-hover">
                 <video src="./assets/video2.mp4" autoplay muted loop playsinline></video>
-                <div class="overlay">DentalEPopUpBook, Freelance<br>Unity</div>
+                <div class="overlay">Dental E-Pop Up Book, Freelance<br>Unity</div>
             </div>
             <div class="video-item zoom-hover">
                 <video src="./assets/video4.mp4" autoplay muted loop playsinline></video>
@@ -163,7 +177,7 @@
     <footer>
         <nav id="footer">
             <div class="nav-column end">
-                <h2 class="text text-color">Contact</h2>
+                <p class="text text-color">Contact</p>
             </div>
             <div class="nav-column start">
                 <div>
