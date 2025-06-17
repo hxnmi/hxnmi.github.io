@@ -21,26 +21,17 @@ function openModal(modalId) {
     }
 }
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = "none";
-        document.body.classList.remove("modal-open");
-    }
-}
-
 document.getElementById("infoBtn").onclick = () => openModal("infoModal");
 document.getElementById("badgesBtn").onclick = () => openModal("badgesModal");
 
-document.getElementById("infoCloseBtn").onclick = () => closeModal("infoModal");
-document.getElementById("badgesCloseBtn").onclick = () => closeModal("badgesModal");
-
 
 window.onclick = (e) => {
-    if (e.target == modal) {
-        modal.style.display = "none";
-        document.body.classList.remove("modal-open");
-    }
+    document.querySelectorAll(".modal").forEach((modal) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+        }
+    });
 };
 
 function toggleMenu() {

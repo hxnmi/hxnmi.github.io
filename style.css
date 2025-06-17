@@ -1,5 +1,4 @@
 /* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 :root {
@@ -40,14 +39,12 @@ p {
 }
 
 /* TRANSITION */
-
 a,
 .btn {
     transition: all 300ms ease;
 }
 
 /* DESKTOP NAV */
-
 nav,
 .nav-links {
     display: flex;
@@ -67,10 +64,6 @@ nav#top {
 @media (max-width: 1200px) {
     nav#top {
         display: none;
-    }
-
-    #hamburger-nav {
-        display: block;
     }
 }
 
@@ -139,9 +132,14 @@ a:hover {
 
 
 /* HAMBURGER MENU */
-
 #hamburger-nav {
     display: none;
+}
+
+@media (max-width: 1200px) {
+    #hamburger-nav {
+        display: flex;
+    }
 }
 
 .hamburger-menu {
@@ -248,26 +246,7 @@ a:hover {
     transform: translateX(20px);
 }
 
-/* @media (max-width: 500px) {
-    .toggle-switch {
-        width: 32px;
-        height: 16px;
-    }
-
-    .toggle-thumb {
-        width: 12px;
-        height: 12px;
-        top: 2px;
-        left: 2px;
-    }
-
-    [data-theme="dark"] .toggle-thumb {
-        transform: translateX(100% - 18px);
-    }
-} */
-
 /* SECTIONS */
-
 section {
     padding-top: 4vh;
     height: 96vh;
@@ -289,7 +268,6 @@ section {
 }
 
 /* ICONS */
-
 .icon {
     cursor: pointer;
     height: 1.5rem;
@@ -297,7 +275,6 @@ section {
 }
 
 /* WORK SECTION */
-
 #work,
 #learn {
     margin: 0;
@@ -393,7 +370,6 @@ section {
 }
 
 /* CONTACT */
-
 #contact {
     display: flex;
     justify-content: center;
@@ -428,7 +404,33 @@ section {
     cursor: default;
 }
 
-/* Modal container (hidden by default) */
+/* FOOTER */
+#footer {
+    padding: 0 1rem 1rem 1rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .page-section:last-of-type::after {
+        content: '';
+        display: block;
+        height: 0;
+        overflow: hidden;
+        background: white;
+    }
+
+    #footer {
+        position: relative;
+        z-index: 10;
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -439,10 +441,9 @@ section {
     height: 100%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
-    /* dim background */
+
 }
 
-/* Modal content */
 .modal-content {
     background-color: var(--bg-light);
     margin: 5% auto;
@@ -537,16 +538,6 @@ section {
     }
 }
 
-/* Close button */
-.closeBtn {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Prevent background scroll when modal is open */
 body.modal-open {
     overflow: hidden;
 }
