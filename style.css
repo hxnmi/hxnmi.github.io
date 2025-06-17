@@ -131,7 +131,7 @@ a:hover {
 }
 
 .nav-links .text,
-.hamburger-nav .text,
+#hamburger-nav .text,
 .menu-links .text,
 .modal-grid a {
     font-weight: 600;
