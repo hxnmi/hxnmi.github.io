@@ -50,24 +50,32 @@
 
     </nav>
     <nav id="hamburger-nav">
-        <div class="text text-color">Hanif Fahmi</div>
-        <div class="toggle-switch" onclick="toggleDarkMode()">
-            <div class="toggle-thumb"></div>
+        <div class="hamburger-bg">
+            <div class="text text-color">Hanif Fahmi</div>
         </div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="hamburger-bg">
+            <div class="toggle-switch" onclick="toggleDarkMode()">
+                <div class="toggle-thumb"></div>
             </div>
-            <div class="menu-links">
-                <li class="text"><a href="#" onclick="toggleMenu()" data-section="work">Work</a></li>
-                <li class="text"><a href="#" onclick="toggleMenu()" data-section="learn">Learn</a></li>
-                <li class="text"><a href="#info" onclick="openModal('infoModal'); toggleMenu()">Info</a></li>
-                <li class="text"><a href="#badges" onclick="openModal('badgesModal'); toggleMenu()">Badges</a></li>
-                <li class=" text"><a href="#resume"
-                        onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
-                </li>
+        </div>
+        <div class="hamburger-bg">
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <li class="text"><a href="#" onclick="toggleMenu()" data-section="work">Work</a></li>
+                    <li class="text"><a href="#" onclick="toggleMenu()" data-section="learn">Learn</a></li>
+                    <li class="text"><a href="#info" onclick="openModal('infoModal','infoBtn'); toggleMenu()">Info</a>
+                    </li>
+                    <li class="text"><a href="#badges"
+                            onclick="openModal('badgesModal','badgesBtn'); toggleMenu()">Badges</a></li>
+                    <li class=" text"><a href="#resume"
+                            onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
+                    </li>
+                </div>
             </div>
         </div>
     </nav>
