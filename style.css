@@ -136,16 +136,12 @@ a:hover {
         left: 0;
         right: 0;
         z-index: 999;
-        /* background-color: var(--bg-light); */
         justify-content: space-between;
-        align-items: center;
-        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     }
 }
 
 .hamburger-menu {
     position: sticky;
-    display: inline-block;
     z-index: 999;
 }
 
@@ -229,8 +225,7 @@ a:hover {
 
 .hamburger-bg {
     background-color: var(--bg-light);
-    margin-bottom: 1rem;
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0.6rem;
     text-align: center;
     border-radius: 0.5rem;
 }
