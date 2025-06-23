@@ -28,7 +28,6 @@ function openModal(modalId, triggerBtnId) {
         const isMobile = window.innerWidth <= 1200
         if (isMobile) {
             modalContent.style.top = `3.5rem`;
-            modalContent.style.left = `1rem`;
             modalContent.style.right = `1rem`;
             modalContent.style.width = `calc(100% - 2rem)`;
         } else {
@@ -62,7 +61,7 @@ window.onclick = (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
             document.body.classList.remove("modal-open");
-            history.pushState({}, "", "/");
+            history.pushState({}, "", "#");
         }
     });
 };
@@ -72,16 +71,16 @@ function handleLink(event, targetId, triggerBtnId = null) {
 
     const modal = document.getElementById(targetId);
     const section = document.getElementById(targetId);
+    const triggerBtn = triggerBtnId ? document.getElementById(triggerBtnId) : event.currentTarget;
 
     if (modal?.classList.contains("modal")) {
-        modal.onclick = () => openModal(targetId, triggerBtnId);
-        history.pushState({ modalId: targetId, triggerBtnId }, "", `/${targetId.replace("Modal", "")}`);
-    }
-    else if (section?.classList.contains("page-section")) {
+        openModal(targetId, triggerBtn.id);
+        history.pushState({ modalId: targetId, triggerBtnId: triggerBtn.id }, "", `#${targetId.replace("Modal", "")}`);
+    } else if (section?.classList.contains("page-section")) {
         document.querySelectorAll(".page-section").forEach(sec => {
             sec.hidden = sec.id !== targetId;
         });
-        history.pushState({ sectionId: targetId }, "", `/${targetId}`);
+        history.pushState({ sectionId: targetId }, "", `#${targetId}`);
     }
 }
 

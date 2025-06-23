@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hanif Fahmi, Game Developer</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -31,9 +30,9 @@
         </div>
         <div class="nav-column start">
             <ul class="nav-links">
-                <li class="text"><a href="/work" onclick="handleLink(event, 'work')">Work</a>
+                <li class="text"><a href="#work" onclick="handleLink(event, 'work')">Work</a>
                 </li>
-                <li class="text"><a href="/learn" onclick="handleLink(event, 'learn')">Learn</a></li>
+                <li class="text"><a href="#learn" onclick="handleLink(event, 'learn')">Learn</a></li>
             </ul>
         </div>
         <div class="nav-column end">
@@ -41,10 +40,12 @@
                 <div class="toggle-switch" onclick="toggleDarkMode()">
                     <div class="toggle-thumb"></div>
                 </div>
-                <li class="text"><a href="/info" onclick="handleLink(event, 'infoModal', 'infoBtn')">Info</a></li>
-                <li class="text"><a href="/badges" onclick="handleLink(event, 'badgesModal', 'badgesBtn')">Badges</a>
+                <li class="text"><a href="#info" id="infoBtn"
+                        onclick="handleLink(event, 'infoModal', 'infoBtn')">Info</a></li>
+                <li class="text"><a href="#badges" id="badgesBtn"
+                        onclick="handleLink(event, 'badgesModal', 'badgesBtn')">Badges</a>
                 </li>
-                <li class="text"><a href="/resume" target="_blank" rel="noopener noreferrer"
+                <li class="text"><a href="#resume" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
                 </li>
             </ul>
@@ -53,7 +54,7 @@
     </nav>
     <nav id="hamburger-nav">
         <div class="hamburger-bg">
-            <div class="text text-color">Hanif Fahmi</div>
+            <div class="text text-color"><a href="#">Hanif Fahmi</a></div>
         </div>
         <div class="hamburger-bg">
             <div class="toggle-switch" onclick="toggleDarkMode()">
@@ -68,13 +69,16 @@
                     <span></span>
                 </div>
                 <div class="menu-links">
-                    <li class="text"><a href="#" onclick="toggleMenu()" data-section="work">Work</a></li>
-                    <li class="text"><a href="#" onclick="toggleMenu()" data-section="learn">Learn</a></li>
-                    <li class="text"><a href="#info" onclick="openModal('infoModal','infoBtn'); toggleMenu()">Info</a>
+                    <li class="text"><a href="#work" onclick="handleLink(event, 'work')" onclick="toggleMenu()"
+                            data-section="work">Work</a></li>
+                    <li class="text"><a href="#learn" onclick="handleLink(event, 'learn')" onclick="toggleMenu()"
+                            data-section="learn">Learn</a></li>
+                    <li class="text"><a href="#info" id="infoBtn"
+                            onclick="handleLink(event, 'infoModal', 'infoBtn'); toggleMenu()">Info</a>
                     </li>
-                    <li class="text"><a href="#badges"
-                            onclick="openModal('badgesModal','badgesBtn'); toggleMenu()">Badges</a></li>
-                    <li class=" text"><a href="#resume"
+                    <li class="text"><a href="#badges" id="badgesBtn"
+                            onclick="handleLink(event, 'badgesModal', 'badgesBtn'); toggleMenu()">Badges</a></li>
+                    <li class="text"><a href="#resume" target="_blank" rel="noopener noreferrer"
                             onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
                     </li>
                 </div>
@@ -107,10 +111,10 @@
     <div id="badgesModal" class="modal">
         <div class="modal-content">
             <div class="modal-grid">
-                <a href="#unity"
+                <a href="#unity" target="_blank" rel="noopener noreferrer"
                     onclick="window.open('https://www.credly.com/badges/7c078f8a-e787-4597-b8bf-1fa6215b0cc5', '_blank', 'noopener,noreferrer')">Unity
                     Certified Associate: Game Developer</a>
-                <a href="#nvidia"
+                <a href="#nvidia" target="_blank" rel="noopener noreferrer"
                     onclick="window.open('https://learn.nvidia.com/certificates?id=1efa6c4ded0f429bbcd8bce75d94f9a0', '_blank', 'noopener,noreferrer')">NVIDIA
                     Getting Started with Deep Learning</a>
             </div>
@@ -189,11 +193,11 @@
             </div>
             <div class="nav-column start">
                 <div>
-                    <img src="./assets/email.png" alt="Email icon" class="icon"
+                    <img src="./assets/email.png" alt="Email icon" class="icon" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('mailto:hxnmi4@gmail.com', '_blank', 'noopener,noreferrer')" />
-                    <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+                    <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('https://www.linkedin.com/in/hanifahmi/', '_blank', 'noopener,noreferrer')" />
-                    <img src="./assets/github.png" alt="My Github profile" class="icon"
+                    <img src="./assets/github.png" alt="My Github profile" class="icon" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('https://github.com/hxnmi', '_blank', 'noopener,noreferrer')" />
                 </div>
             </div>
