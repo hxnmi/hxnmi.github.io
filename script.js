@@ -38,18 +38,52 @@ function openModal(modalId, triggerBtnId) {
     }
 }
 
-document.getElementById("infoBtn").onclick = () => openModal("infoModal", "infoBtn");
-document.getElementById("badgesBtn").onclick = () => openModal("badgesModal", "badgesBtn");
-
+window.onpopstate = function (event) {
+    if (event.state?.modalId && event.state?.triggerBtnId) {
+        openModal(event.state.modalId, event.state.triggerBtnId);
+    } else if (event.state?.sectionId) {
+        document.querySelectorAll(".page-section").forEach(sec => {
+            sec.hidden = sec.id !== event.state.sectionId;
+        });
+        // if (event.state && event.state.linkId && event.state.triggerBtnId) {
+        //     // document.getElementById("infoBtn").onclick = () => openModal("infoModal", "infoBtn");
+        //     // document.getElementById("badgesBtn").onclick = () => openModal("badgesModal", "badgesBtn");
+        //     openModal(event.state.linkId, event.state.triggerBtnId);
+    } else {
+        document.querySelectorAll(".modal").forEach((modal) => {
+            modal.style.display = "none";
+        });
+        document.body.classList.remove("modal-open");
+    }
+};
 
 window.onclick = (e) => {
     document.querySelectorAll(".modal").forEach((modal) => {
         if (e.target === modal) {
             modal.style.display = "none";
             document.body.classList.remove("modal-open");
+            history.pushState({}, "", "/");
         }
     });
 };
+
+function handleLink(event, targetId, triggerBtnId = null) {
+    event.preventDefault();
+
+    const modal = document.getElementById(targetId);
+    const section = document.getElementById(targetId);
+
+    if (modal?.classList.contains("modal")) {
+        modal.onclick = () => openModal(targetId, triggerBtnId);
+        history.pushState({ modalId: targetId, triggerBtnId }, "", `/${targetId.replace("Modal", "")}`);
+    }
+    else if (section?.classList.contains("page-section")) {
+        document.querySelectorAll(".page-section").forEach(sec => {
+            sec.hidden = sec.id !== targetId;
+        });
+        history.pushState({ sectionId: targetId }, "", `/${targetId}`);
+    }
+}
 
 function toggleMenu() {
     const menu = document.querySelector(".menu-links");

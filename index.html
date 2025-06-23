@@ -26,13 +26,14 @@
     <nav id="top">
         <div class="nav-column start">
             <ul class="nav-links">
-                <div class="text"><a href="">Hanif Fahmi</a></div>
+                <div class="text"><a href="#">Hanif Fahmi</a></div>
             </ul>
         </div>
         <div class="nav-column start">
             <ul class="nav-links">
-                <li class="text"><a href="#" data-section="work">Work</a></li>
-                <li class="text"><a href="#" data-section="learn">Learn</a></li>
+                <li class="text"><a href="/work" onclick="handleLink(event, 'work')">Work</a>
+                </li>
+                <li class="text"><a href="/learn" onclick="handleLink(event, 'learn')">Learn</a></li>
             </ul>
         </div>
         <div class="nav-column end">
@@ -40,9 +41,10 @@
                 <div class="toggle-switch" onclick="toggleDarkMode()">
                     <div class="toggle-thumb"></div>
                 </div>
-                <li class="text"><a href="#info" id="infoBtn">Info</a></li>
-                <li class="text"><a href="#badges" id="badgesBtn">Badges</a></li>
-                <li class="text"><a href="#resume" target="_blank" rel="noopener noreferrer"
+                <li class="text"><a href="/info" onclick="handleLink(event, 'infoModal', 'infoBtn')">Info</a></li>
+                <li class="text"><a href="/badges" onclick="handleLink(event, 'badgesModal', 'badgesBtn')">Badges</a>
+                </li>
+                <li class="text"><a href="/resume" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
                 </li>
             </ul>
