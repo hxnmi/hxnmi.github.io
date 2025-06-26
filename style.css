@@ -48,6 +48,7 @@ a,
 nav,
 .nav-links {
     display: flex;
+    mix-blend-mode: difference;
 }
 
 nav {
@@ -93,14 +94,12 @@ nav#top {
     gap: 1rem;
     list-style: none;
     font-size: 1.5rem;
-    background-color: var(--bg-light);
-    padding: 0.4rem 0.7rem;
-    text-align: center;
-    border-radius: 0.5rem;
-
+    background: transparent;
+    backdrop-filter: none;
 }
 
 a {
+    transition: color 0.2s ease;
     color: var(--text-light);
     text-decoration: none;
     text-decoration-color: var(--bg-light);
@@ -116,11 +115,25 @@ a:hover {
 }
 
 .text-color {
-    color: var(--text-light);
+    color: white;
 }
 
 .text:hover {
     cursor: default;
+}
+
+.invert-text,
+.invert-text span {
+    pointer-events: auto;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.invert-text:hover {
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 /* HAMBURGER MENU */
@@ -157,7 +170,7 @@ a:hover {
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: var(--bg-dark);
+    background-color: white;
     transition: all 0.3 ease-in-out;
 }
 
@@ -216,21 +229,6 @@ a:hover {
     transform: none;
 }
 
-.nav-links .text,
-#hamburger-nav .text,
-.menu-links .text,
-.modal-grid a {
-    font-weight: 600;
-}
-
-.hamburger-bg {
-    background-color: var(--bg-light);
-    padding: 0.3rem 0.6rem;
-    text-align: center;
-    border-radius: 0.5rem;
-}
-
-
 /* === TOGGLE BUTTON === */
 .toggle-switch {
     position: relative;
@@ -264,6 +262,8 @@ section {
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
+    position: relative;
+    z-index: 1;
 }
 
 .section-container {
@@ -282,7 +282,7 @@ section {
 .icon {
     cursor: pointer;
     height: 1.5rem;
-    filter: var(--icon-light);
+    filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(7448%) hue-rotate(258deg) brightness(101%) contrast(100%);
 }
 
 /* WORK SECTION */

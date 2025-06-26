@@ -25,14 +25,15 @@
     <nav id="top">
         <div class="nav-column start">
             <ul class="nav-links">
-                <div class="text"><a href="#">Hanif Fahmi</a></div>
+                <div class="text"><a class="invert-text" href="#">Hanif Fahmi</a></div>
             </ul>
         </div>
         <div class="nav-column start">
             <ul class="nav-links">
-                <li class="text"><a href="#work" onclick="handleLink(event, 'work')">Work</a>
+                <li class="text"><a class="invert-text" href="#work" onclick="handleLink(event, 'work')">Work</a>
                 </li>
-                <li class="text"><a href="#learn" onclick="handleLink(event, 'learn')">Learn</a></li>
+                <li class="text"><a class="invert-text" href="#learn" onclick="handleLink(event, 'learn')">Learn</a>
+                </li>
             </ul>
         </div>
         <div class="nav-column end">
@@ -40,21 +41,20 @@
                 <div class="toggle-switch" onclick="toggleDarkMode()">
                     <div class="toggle-thumb"></div>
                 </div>
-                <li class="text"><a href="#info" id="infoBtn"
+                <li class="text"><a class="invert-text" href="#info" id="infoBtn"
                         onclick="handleLink(event, 'infoModal', 'infoBtn')">Info</a></li>
-                <li class="text"><a href="#badges" id="badgesBtn"
+                <li class="text"><a class="invert-text" href="#badges" id="badgesBtn"
                         onclick="handleLink(event, 'badgesModal', 'badgesBtn')">Badges</a>
                 </li>
-                <li class="text"><a href="#resume" target="_blank" rel="noopener noreferrer"
+                <li class="text"><a class="invert-text" href="#resume" target="_blank" rel="noopener noreferrer"
                         onclick="window.open('https://drive.google.com/file/d/1gFxcBYR3ERxIUFNRD3CGLR3IK5v9hRIN/view?usp=sharing', '_blank', 'noopener,noreferrer')">Résumé</a>
                 </li>
             </ul>
         </div>
-
     </nav>
     <nav id="hamburger-nav">
         <div class="hamburger-bg">
-            <div class="text text-color"><a href="#">Hanif Fahmi</a></div>
+            <div class="text text-color"><a class="invert-text" href="#">Hanif Fahmi</a></div>
         </div>
         <div class="hamburger-bg">
             <div class="toggle-switch" onclick="toggleDarkMode()">
@@ -123,27 +123,33 @@
     <section id="work" class="page-section">
         <div class="masonry-grid">
             <div class="video-item zoom-hover">
-                <video src="./assets/video3.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video3.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Pawukon ChatBot, Freelance<br>Unity, LangChain, OpenAI, FastAPI</div>
             </div>
             <div class="video-item zoom-hover">
-                <video src="./assets/video8.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video8.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Grimoire of Arcturus, Independent Study<br>Unity</div>
             </div>
             <div class="video-item zoom-hover">
-                <video src="./assets/video1.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video1.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Mech.AI, Udinus<br>Unity, PPO, ML-Agents</div>
             </div>
             <div class="video-item zoom-hover">
-                <video src="./assets/video0.mp4" autoplay muted loop playsinline id="bg-video"></video>
+                <video src="./assets/video0.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Gigi Edukasi Isyarat, Freelance<br>Unity</div>
             </div>
             <div class="video-item zoom-hover">
-                <video src="./assets/video2.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video2.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Dental E-Pop Up Book, Freelance<br>Unity</div>
             </div>
             <div class="video-item zoom-hover">
-                <video src="./assets/video4.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video4.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Sinner Run, Independent Study<br>Unity</div>
             </div>
             <!-- Add more video-item blocks as needed -->
@@ -152,35 +158,43 @@
     <section id="learn" class="page-section" hidden>
         <div class="masonry-grid">
             <div class="video-item">
-                <video src="./assets/video6.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video6.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Breast Cancer Classification, Udinus<br>Python, Supervised Learning</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video7.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video7.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Mini Golf, Independent Study<br>Unity</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video9.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video9.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Unity AI Navigation<br>Unity</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video10.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video10.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Shuba Cross Road, Independent Study<br>Unity</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video11.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video11.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Sugaku Heroes<br>Unity</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video12.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video12.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Rock Paper Scissors RPG, Independent Study<br>Unity</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video13.mp4" autoplay muted loop playsinline></video>
+                <video src="./assets/video13.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">3D Movement & Camera<br>Unity</div>
             </div>
             <div class="video-item">
-                <video src="./assets/video5.mp4" autoplay muted loop playsinline id="bg-video"></video>
+                <video src="./assets/video5.mp4" crossorigin="anonymous" autoplay muted loop playsinline
+                    id="bg-video"></video>
                 <div class="overlay">Keyboard Mod<br>Hobby</div>
             </div>
             <!-- Add more video-item blocks as needed -->
@@ -193,11 +207,14 @@
             </div>
             <div class="nav-column start">
                 <div>
-                    <img src="./assets/email.png" alt="Email icon" class="icon" target="_blank" rel="noopener noreferrer"
+                    <img src="./assets/email.png" alt="Email icon" class="icon" target="_blank"
+                        rel="noopener noreferrer"
                         onclick="window.open('mailto:hxnmi4@gmail.com', '_blank', 'noopener,noreferrer')" />
-                    <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" target="_blank" rel="noopener noreferrer"
+                    <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" target="_blank"
+                        rel="noopener noreferrer"
                         onclick="window.open('https://www.linkedin.com/in/hanifahmi/', '_blank', 'noopener,noreferrer')" />
-                    <img src="./assets/github.png" alt="My Github profile" class="icon" target="_blank" rel="noopener noreferrer"
+                    <img src="./assets/github.png" alt="My Github profile" class="icon" target="_blank"
+                        rel="noopener noreferrer"
                         onclick="window.open('https://github.com/hxnmi', '_blank', 'noopener,noreferrer')" />
                 </div>
             </div>
